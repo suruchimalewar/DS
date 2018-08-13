@@ -28,7 +28,7 @@ void finMinAndMax(Node *root, int *min, int *max, int hd)
     finMinAndMax(root->right, min, max, hd + 1);
 }
 
-void PrintVertical(Node *root, int i, int hd)
+void PrintTop(Node *root, int i, int hd)
 {
     if (root == nullptr)
         return;
@@ -36,13 +36,14 @@ void PrintVertical(Node *root, int i, int hd)
     if (i == hd)
     {
         cout << root->data << " ";
+        return;
     }
 
-    PrintVertical(root->left, i, hd - 1);
-    PrintVertical(root->right, i, hd + 1);
+    PrintTop(root->left, i, hd - 1);
+    PrintTop(root->right, i, hd + 1);
 }
 
-void printVerticalutil(Node *root)
+void printToputil(Node *root)
 {
     if (root == nullptr)
         return;
@@ -53,8 +54,7 @@ void printVerticalutil(Node *root)
 
     for (int i = min; i <= max; i++)
     {
-        PrintVertical(root, i, 0);
-        cout << endl;
+        PrintTop(root, i, 0);
     }
 }
 int main()
@@ -69,8 +69,8 @@ int main()
     root->right->left->right = new Node(8);
     root->right->right->right = new Node(9);
 
-    cout << "Vertical view of given Binary tree is  \n";
+    cout << "Top view of given Binary tree is  \n";
 
-    printVerticalutil(root);
+    printToputil(root);
     return 0;
 }
