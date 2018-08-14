@@ -49,10 +49,25 @@ void printLevelOrder(Node *root)
 {
     int height = heightOfBinaryTree(root);
 
-    for (int i = 1; i < height; ++i)
+    for (int i = 1; i <= height; i++)
     {
         printPerGivenLevel(root, i);
         cout << endl;
+    }
+}
+void LevelUsingQueue(Node *root)
+{
+    std::queue<Node *> q;
+    q.push(root);
+    while (!q.empty())
+    {
+        Node *node = q.front();
+        cout << node->data;
+        q.pop();
+        if (node->left)
+            q.push(node->left);
+        if (node->right)
+            q.push(node->right);
     }
 }
 
@@ -65,6 +80,8 @@ int main()
     root->left->right = new Node(5);
     root->left->right->left = new Node(9);
 
-    cout << "Level order traversal of given Binary tree is  \n";
+    cout << "Level order traversal of given Binary tree using recusion is  \n";
     printLevelOrder(root);
+    cout << "Level order traversal of given Binary tree without using recusion is  \n";
+    LevelUsingQueue(root);
 }
