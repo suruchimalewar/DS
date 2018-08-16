@@ -37,8 +37,9 @@ void printPerGivenLevel(Node *root, int i)
         return;
 
     if (i == 1)
+    {
         cout << root->data << " ";
-
+    }
     else if (i > 1)
     {
         printPerGivenLevel(root->left, i - 1);
