@@ -24,6 +24,8 @@ Node *lowestCommonAcc(Node *root, int val1, int val2)
         return l;
     if (r != nullptr)
         return r;
+
+    return nullptr;
 }
 int main()
 {
