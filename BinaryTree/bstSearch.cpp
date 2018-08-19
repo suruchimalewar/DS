@@ -27,7 +27,7 @@ int main()
         BSTInsert(root, rand() % 50);
     }
 
-    drawBinaryTree(root);
+    DrawBinaryTree(root);
     Inorder(root);
     cout << endl;
 

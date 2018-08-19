@@ -32,7 +32,7 @@ int main()
     // Variation 1
     Node *root = NULL;
     DeSerialize(root, "Input");
-    drawBinaryTree(root);
+    DrawBinaryTree(root);
     Inorder(root);
     cout << endl;
 
