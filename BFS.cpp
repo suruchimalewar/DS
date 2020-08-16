@@ -19,7 +19,7 @@ void BFS (vector<vector<int>> A, int start, int end) {
     while(!q.empty()){
         int i = q.front();
         q.pop();
-        for(int j = 1; j < end; ++j) {
+        for(int j = 1; j <= end; ++j) {
             if(V[j] == 0 && A[i][j] == 1) {
                 cout << j << " ";
                 V[j] = 1;
